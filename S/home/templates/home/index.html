@@ -4,6 +4,12 @@
 {% block content %}
 <h3> WELCOME TO MY SOCIAL MEDIA</h3>
 
+<div class="card">
+    {% for post in posts %}
+    <a href=""><h4>{{ post.user.full_name }} :</h4></a>
+    <p>{{ post.body | truncatewords:5 }}</p>
+    {% endfor %}
 
+</div>
 
 {% endblock %}
