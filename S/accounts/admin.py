@@ -18,7 +18,7 @@ class UserAdmin(BaseUserAdmin):
     readonly_fields = ('last_login',)
 
     fieldsets = (
-        ('Main', {'fields': ('phone_number', 'email', 'full_name', 'password')}),
+        ('Main', {'fields': ('email', 'phone_number', 'full_name', 'password')}),
         ('Permissions',
          {'fields': ('is_active', 'is_admin', 'is_superuser', 'last_login', 'groups', 'user_permissions')}),
     )
