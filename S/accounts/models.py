@@ -5,7 +5,7 @@ from .managers import UserManager
 
 class User(AbstractBaseUser):
     email = models.EmailField(max_length=250, unique=True)
-    phone_number = models.CharField(max_length=11, unique=True)
+    phone_number = models.CharField(max_length=200, unique=True)
     full_name = models.CharField(max_length=200)
     is_admin = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
@@ -31,7 +31,7 @@ class User(AbstractBaseUser):
 
 class OtpCode(models.Model):
     phone_number = models.CharField(max_length=11, unique=True)
-    code = models.PositiveSmallIntegerField()
+    code = models.PositiveIntegerField()
     created = models.DateTimeField(auto_now=True)
 
     def __str__(self):
